@@ -9,13 +9,6 @@ public final class Board {
     private Square selectedSquare;
     public static final int SIZE = 8;
     
-    public static String printRow(int row) {
-        return String.valueOf( 65-row);
-    }
-
-    public static String printColumn(int column) {
-        return String.valueOf( column);
-    }
 
 
     public Square getSquare(int row, int column) {

@@ -3,32 +3,21 @@ package com.satyy.chess_tdd;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Scanner;
+import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
 import com.satyy.chess.characters.impl.Square;
 
 class ChessTest {
-	
-//	@Test
-//	void getInputForType() {
-//		try(Scanner input = new Scanner(System.in))
-//		{
-//			assertEquals("King",Chess.getInputForType(input) );
-//		}
-		
 		
 	@Test
 	public void testNextPossibleMoveForKing()
-	{
-		Chess chessService = new Chess();
+	{		
+		List<Square> nextPossibleSquare = (List<Square>) Chess.getMoves("King", new Square(5,5));
 		
-		Collection<Square> nextPossibleSquare = Chess.getMoves("King", new Square(5,4));
-		
-		Square d6 = new Square(6, 4);
-		Square e4 = new Square(4, 5);
+		Square d6 = new Square(6, 5);
+		Square e5 = new Square(6, 5);
 
 		assertTrue(nextPossibleSquare.contains(d6));
 	}

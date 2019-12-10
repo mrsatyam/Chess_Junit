@@ -20,17 +20,26 @@ public class Chess {
 		try (Scanner input = new Scanner(System.in)) {
 
 			String type = getInputForType(input);
-			Square currentPos = getSquare(getInputForPosition(input));
+			Square currentPos = getSquare(getColumnForPosition(input),getRowForPosition(input));
 			Collection<Square> moves = getMoves(type, currentPos);
-			moves.forEach(System.out::println);
+			System.out.print("Possible moves: ");
+			moves.forEach((move)->System.out.print(move+","));
 
 		}
 
 	}
 
-	public static String getInputForPosition(Scanner input) {
-		System.out.println("Enter the position of the piece ");
-		return input.nextLine();
+	public static int getRowForPosition(Scanner input) {
+		System.out.println("Enter the current row of the piece > 0 ");
+		
+		return input.nextInt();
+
+	}
+	public static int getColumnForPosition(Scanner input) {
+		System.out.println("Enter the current column of the piece (from A to H) ");
+		 String in = input.next();
+		 int column = in.charAt(0) - (int)'A' + 2;
+		 return column;
 
 	}
 
@@ -40,9 +49,8 @@ public class Chess {
 
 	}
 
-	private static Square getSquare(String position) {
-		int row = 50-position.charAt(1);
-		int column = 65 - position.charAt(0);
+	private static Square getSquare(int row,int column) {
+		
 		return new Square(row, column);
 
 	}

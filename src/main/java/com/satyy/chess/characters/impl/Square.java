@@ -25,17 +25,35 @@ public class Square {
 
     @Override
     public String toString() {
-        return "Row: " + Board.printRow(ROW) + " Column: " + Board.printColumn(COLUMN) + " - (" + ROW + "," + COLUMN + ")";
+    	
+        return ""+(char)(COLUMN + (int)'A' - 2) + ROW;
     }
 
+    @Override
+	public int hashCode() {
+		return (ROW+COLUMN) * 2222 ;
+	}
 
 
 
-    public Square neighbour(int row, int column) {
+
+
+	@Override
+	public boolean equals(Object obj) {
+		return ((Square)obj).ROW == this.ROW && ((Square)obj).COLUMN == this.COLUMN;
+	}
+
+
+
+
+
+	public Square neighbour(int row, int column) {
         return getSquare(ROW + row, COLUMN + column);
     }
 
 	public Square getSquare(int row, int column) {
 		return new Square(row,column);
 	}
+	
+	
 }

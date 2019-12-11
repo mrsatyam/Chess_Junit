@@ -10,8 +10,8 @@ public class Square {
     private Piece piece;
 
     public Square(int row, int column) {
-        ROW = row;
-        COLUMN = column;
+        ROW = row ;
+        COLUMN = column ;
     }
 
 
@@ -26,7 +26,7 @@ public class Square {
     @Override
     public String toString() {
     	
-        return ""+(char)(COLUMN + (int)'A' - 2) + ROW;
+        return ""+(char)(COLUMN + (int)'A' - 1 ) + ROW;
     }
 
     @Override

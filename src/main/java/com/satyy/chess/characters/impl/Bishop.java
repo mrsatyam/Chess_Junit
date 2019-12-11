@@ -10,12 +10,13 @@ import com.satyy.chess.characters.dao.PieceType;
 
 public class Bishop extends Piece {
 
+	Collection<Square> possibleMoves;
+
     public Bishop(PieceType type) {
 		super(type);
-		// TODO Auto-generated constructor stub
+		possibleMoves = new ArrayList<>();
 	}
 
-	Collection<Square> possibleMoves;
 
    
 
@@ -23,7 +24,6 @@ public class Bishop extends Piece {
     public Collection<Square> generatePossibleMoves() {
         int row = super.getSquare().ROW;
         int column = super.getSquare().COLUMN;
-        possibleMoves.clear();
         //all possible moves in the down positive diagonal
         for (int j = column + 1, i = row + 1; j < Board.SIZE && i < Board.SIZE; j++, i++) {
             Square square = super.getSquare().getSquare(i,j);
@@ -69,6 +69,6 @@ public class Bishop extends Piece {
 
     @Override
     public Collection<Square> getPossibleMoves() {
-        return possibleMoves;
+        return generatePossibleMoves();
     }
 }

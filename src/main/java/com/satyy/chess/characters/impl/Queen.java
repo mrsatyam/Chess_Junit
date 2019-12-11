@@ -17,7 +17,6 @@ public class Queen extends Piece {
 
     @Override
     public Collection<Square> generatePossibleMoves() {
-        possibleMoves.clear();
         Piece[] pieces = {
             PieceType.ROOK.create(),
             PieceType.BISHOP.create()
@@ -31,6 +30,6 @@ public class Queen extends Piece {
 
     @Override
     public Collection<Square> getPossibleMoves() {
-        return possibleMoves;
+        return generatePossibleMoves();
     }
 }

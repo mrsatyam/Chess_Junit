@@ -18,7 +18,6 @@ public class Horse extends Piece {
 
     @Override
     public Collection<Square> generatePossibleMoves() {
-        possibleMoves.clear();
         int[][] offsets = {
             {-2, 1},
             {-1, 2},
@@ -40,6 +39,6 @@ public class Horse extends Piece {
 
     @Override
     public Collection<Square> getPossibleMoves() {
-        return possibleMoves;
+        return generatePossibleMoves();
     }
 }

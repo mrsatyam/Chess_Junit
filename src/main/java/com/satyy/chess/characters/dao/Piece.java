@@ -36,14 +36,4 @@ public abstract class Piece {
     }
 
 
-
- 
-
-    public void printPossibleMoves() {
-        generatePossibleMoves();
-        getPossibleMoves().stream().forEach((_item) -> {
-          System.out.println(_item);
-        });
-    }
-
 }

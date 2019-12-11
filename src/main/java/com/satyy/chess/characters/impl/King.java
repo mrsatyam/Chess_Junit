@@ -10,19 +10,16 @@ import com.satyy.chess.characters.dao.PieceType;
 public class King extends Piece {
 
     Collection<Square> possibleMoves;
-    boolean inCheck;
 
     public King(PieceType type) {
         super(type);
         possibleMoves = new ArrayList<>();
-        inCheck = false;
     }
 
 	
 
 	@Override
     public Collection<Square> generatePossibleMoves() {
-        possibleMoves.clear();
         List<Square> moves = new ArrayList<>();
         int[][] offsets = {
             {1, 0},

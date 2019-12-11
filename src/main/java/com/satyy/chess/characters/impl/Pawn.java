@@ -24,7 +24,7 @@ public class Pawn extends Piece {
 
     @Override
     public Collection<Square> getPossibleMoves() {
-        return possibleMoves;
+        return generatePossibleMoves();
     }
 
 }

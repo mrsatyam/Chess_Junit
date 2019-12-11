@@ -19,15 +19,11 @@ public class Rook extends Piece {
     public Collection<Square> generatePossibleMoves() {
         int row = super.getSquare().ROW;
         int column = super.getSquare().COLUMN;
-        possibleMoves.clear();
         //all possible moves in the up
         for (int i = row + 1; i < Board.SIZE; i++) {
             Square square = super.getSquare().getSquare(i, column);
             if (square.getPiece() == null) {
                 possibleMoves.add(square);
-            } else {
-                possibleMoves.add(square);
-                break;
             } 
         }
         //all possible moves in the down
@@ -62,7 +58,7 @@ public class Rook extends Piece {
 
     @Override
     public Collection<Square> getPossibleMoves() {
-        return possibleMoves;
+        return generatePossibleMoves();
     }
 
 }

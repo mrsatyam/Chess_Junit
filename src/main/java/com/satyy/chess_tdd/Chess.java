@@ -25,8 +25,6 @@ public class Chess {
 			System.out.print("Possible moves: ");
 			moves.forEach((move)->System.out.print(move+","));
 
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 
 	}
@@ -40,7 +38,7 @@ public class Chess {
 	public static int getColumnForPosition(Scanner input) {
 		System.out.println("Enter the current column of the piece (from A to H) ");
 		 String in = input.next();
-		 int column = in.charAt(0) - (int)'A' + 1;
+		 int column = in.charAt(0) - (int)'A' ;
 		 return column;
 
 	}
@@ -53,7 +51,7 @@ public class Chess {
 
 	private static Square getSquare(int column,int row) {
 		
-		return new Square(row , column);
+		return new Square(row, column);
 
 	}
 
@@ -91,7 +89,7 @@ public class Chess {
 			return piece.getPossibleMoves();
 
 		default:
-			throw new RuntimeException("Illegal piece type");
+			throw new NumberFormatException();
 		}
 
 	}

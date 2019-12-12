@@ -26,7 +26,7 @@ public class Square {
     @Override
     public String toString() {
     	
-        return ""+(char)(COLUMN + (int)'A' - 1 ) + ROW;
+        return ""+(char)(COLUMN + (int)'A' ) + ROW;
     }
 
     @Override

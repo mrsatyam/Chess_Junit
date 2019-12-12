@@ -80,19 +80,18 @@ class ChessTest {
 	public void testNextPossibleMoveForHorse()
 	{		
 		
-		//“D6,	E6,	E5,	E4,	D4,	C4,	C5,	C6
 		List<Square> nextPossibleSquare = (List<Square>) Chess.getMoves("Horse", new Square(5,3));
 		
-		Square d6 = new Square(6, 5);
-		Square e5 = new Square(5, 6);
-		Square d4 = new Square(4, 5);
-		Square c5 = new Square(5, 4);
-		Square e6 = new Square(6, 6);
-		Square e4 = new Square(6, 4);
-		Square c4 = new Square(4, 4);
-		Square c6 = new Square(4, 6);
+		Square e3 = new Square(3, 4);
+		Square f4 = new Square(4, 5);
+		Square f6 = new Square(6, 5);
+		Square e7 = new Square(7, 4);
+		Square c7 = new Square(7, 2);
+		Square b6 = new Square(6, 1);
+		Square b4 = new Square(4, 1);
+		Square c3 = new Square(3, 2);
 
-		assertTrue(nextPossibleSquare.containsAll(Arrays.asList(d6,e5,d4,c5,e6,e4,c4,c6)));
+		assertTrue(nextPossibleSquare.containsAll(Arrays.asList(e3, f4, f6, e7, c7, b6, b4, c3)));
 	}
 
 	@Test

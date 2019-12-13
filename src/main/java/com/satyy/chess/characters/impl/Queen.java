@@ -8,28 +8,25 @@ import com.satyy.chess.characters.dao.PieceType;
 
 public class Queen extends Piece {
 
-    Collection<Square> possibleMoves;
+	Collection<Square> possibleMoves;
 
-    public Queen(PieceType type) {
-        super(type);
-        possibleMoves = new ArrayList<>();
-    }
+	public Queen(PieceType type) {
+		super(type);
+		possibleMoves = new ArrayList<>();
+	}
 
-    @Override
-    public Collection<Square> generatePossibleMoves() {
-        Piece[] pieces = {
-            PieceType.ROOK.create(),
-            PieceType.BISHOP.create()
-        };
-        for (Piece piece : pieces) {
-            piece.setSquare(getSquare());
-            possibleMoves.addAll(piece.generatePossibleMoves());
-        }
-        return possibleMoves;
-    }
+	@Override
+	public Collection<Square> generatePossibleMoves() {
+		Piece[] pieces = { PieceType.ROOK.create(), PieceType.BISHOP.create() };
+		for (Piece piece : pieces) {
+			piece.setSquare(getSquare());
+			possibleMoves.addAll(piece.generatePossibleMoves());
+		}
+		return possibleMoves;
+	}
 
-    @Override
-    public Collection<Square> getPossibleMoves() {
-        return generatePossibleMoves();
-    }
+	@Override
+	public Collection<Square> getPossibleMoves() {
+		return generatePossibleMoves();
+	}
 }
